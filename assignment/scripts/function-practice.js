@@ -10,36 +10,42 @@ function hello() {
 }
 // Call the function to test
 console.log('Test - should say "Hello World!"', hello());
-
+hello();
 
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName(name) {
-  return;
+  return `Hello, ` + name + `!`
 }
+helloName(`Zakaria`);
+
 // Remember to call the function to test
 
 
 // 3. Function to add two numbers together & return the result
-function addNumbers(firstNumber) {
+function addNumbers(firstNumber, secondNumber) {
   // return firstNumber + secondNumber;
+  return firstNumber + secondNumber
 }
 
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree() {
-
+function multiplyThree(firstNumber,secondNumber,thirdNumber) {
+return firstNumber * secondNumber * thirdNumber
 }
-
+multiplyThree();
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive(number) {
   if (number > 0) {
-    return;
+    return true;
   }
-  return;
+  else {
+    return false;
+  }
 }
+isPositive();
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
 
@@ -47,15 +53,25 @@ function isPositive(number) {
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 function getLast(array) {
-
+if(array.lenght == 0){
+  return `undefined`
 }
+return array[array.length - 1];
+}
+getLast()
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find(value, array) {
+for(let i = 0; i < array.length; i++){
+  if(array[i] === value){
+    return true;
+  }
 
 }
+}
+find();
 
 // ----------------------
 // Stretch Goals
@@ -71,8 +87,11 @@ function isFirstLetter(letter, string) {
 function sumAll(array) {
   let sum = 0;
   // TODO: loop to add items
-
+  for (let i = 0; i < array.lenght; i++){
+    sum = sum + array[i];
+  }
   // TODO: return the sum
+  return sum;
 }
 
 // 10. Function to return a new array of all positive (greater than zero)
